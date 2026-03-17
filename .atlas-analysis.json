@@ -1,0 +1,178 @@
+{
+  "projectType": "saas",
+  "projectName": "Open LLM VTuber",
+  "projectDescription": "A cross-platform, fully offline AI companion with a Live2D avatar, real-time voice interaction, voice interruption, and support for any LLM, ASR, and TTS backend.",
+  "theme": "almond",
+  "primaryColor": "#9c5c6c",
+  "lightColor": "#3f3a6c",
+  "darkColor": "#c6b3ca",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Get Started",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": ["introduction", "quickstart"]
+          },
+          {
+            "group": "Installation",
+            "pages": [
+              "installation/windows",
+              "installation/macos",
+              "installation/linux",
+              "installation/docker"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/architecture",
+              "concepts/configuration",
+              "concepts/agents",
+              "concepts/live2d"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "User Guide",
+        "groups": [
+          {
+            "group": "Configuration",
+            "pages": [
+              "user-guide/configuration-overview",
+              "user-guide/character-customization",
+              "user-guide/live2d-models",
+              "user-guide/chat-history"
+            ]
+          },
+          {
+            "group": "LLM Backends",
+            "pages": [
+              "user-guide/llm/overview",
+              "user-guide/llm/ollama",
+              "user-guide/llm/openai-compatible",
+              "user-guide/llm/openai",
+              "user-guide/llm/claude",
+              "user-guide/llm/gemini",
+              "user-guide/llm/deepseek",
+              "user-guide/llm/groq",
+              "user-guide/llm/lmstudio",
+              "user-guide/llm/mistral",
+              "user-guide/llm/zhipu"
+            ]
+          },
+          {
+            "group": "Speech Recognition (ASR)",
+            "pages": [
+              "user-guide/asr/overview",
+              "user-guide/asr/sherpa-onnx",
+              "user-guide/asr/faster-whisper",
+              "user-guide/asr/whisper-cpp",
+              "user-guide/asr/funasr",
+              "user-guide/asr/azure-asr",
+              "user-guide/asr/groq-whisper"
+            ]
+          },
+          {
+            "group": "Text to Speech (TTS)",
+            "pages": [
+              "user-guide/tts/overview",
+              "user-guide/tts/edge-tts",
+              "user-guide/tts/sherpa-onnx",
+              "user-guide/tts/azure-tts",
+              "user-guide/tts/cosyvoice",
+              "user-guide/tts/gpt-sovits",
+              "user-guide/tts/melo-tts",
+              "user-guide/tts/fish-audio",
+              "user-guide/tts/elevenlabs",
+              "user-guide/tts/piper",
+              "user-guide/tts/bark",
+              "user-guide/tts/coqui"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "user-guide/advanced/voice-interruption",
+              "user-guide/advanced/visual-perception",
+              "user-guide/advanced/mcp-tools",
+              "user-guide/advanced/group-conversation",
+              "user-guide/advanced/tts-translation",
+              "user-guide/advanced/proactive-speaking",
+              "user-guide/advanced/bilibili-live"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Development",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "development/overview",
+              "development/setup"
+            ]
+          },
+          {
+            "group": "Extending the System",
+            "pages": [
+              "development/adding-llm",
+              "development/adding-asr",
+              "development/adding-tts",
+              "development/adding-agent"
+            ]
+          },
+          {
+            "group": "Internals",
+            "pages": [
+              "development/websocket-protocol",
+              "development/service-context",
+              "development/config-manager"
+            ]
+          },
+          {
+            "group": "Contributing",
+            "pages": [
+              "development/contributing",
+              "development/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Real-time voice interaction with hands-free conversation and voice interruption",
+    "Live2D avatar with expression and motion control",
+    "Completely offline operation — all components can run locally",
+    "Cross-platform: Windows, macOS, and Linux",
+    "Web and desktop client modes, including transparent desktop pet mode",
+    "Visual perception: camera, screen recording, and screenshots",
+    "Support for any LLM via OpenAI-compatible API, Ollama, Claude, Gemini, and more",
+    "Modular ASR backends: Sherpa-ONNX, Faster-Whisper, FunASR, Azure, Groq",
+    "Modular TTS backends: Edge TTS, GPT-SoVITS, CosyVoice, ElevenLabs, Azure, and more",
+    "MCP (Model Context Protocol) tool integration",
+    "Group conversation support with multiple AI participants",
+    "Chat history persistence and session switching",
+    "TTS translation (speak in one language, AI responds in another)",
+    "Character customization: Live2D models, persona prompts, voice cloning"
+  ],
+  "publicApiSurface": [
+    "WebSocket server at ws://localhost:12393 (main client endpoint)",
+    "WebSocket proxy endpoint at /proxy-ws",
+    "FastAPI HTTP server serving frontend and static assets",
+    "AgentInterface — base class for custom agent implementations",
+    "ASRInterface — base class for custom ASR engine implementations",
+    "TTSInterface — base class for custom TTS engine implementations",
+    "agent_factory.py — factory for creating agent instances from config",
+    "asr_factory.py — factory for creating ASR engine instances from config",
+    "tts_factory.py — factory for creating TTS engine instances from config",
+    "ServiceContext — central dependency injection container per WebSocket connection",
+    "conf.yaml — main user configuration file (YAML)",
+    "characters/*.yaml — character-specific configuration files",
+    "model_dict.json — registry of available Live2D models"
+  ]
+}
